@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MCM/ICM 2026 Certificate Monitor</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="masthead">
+        <div>
+          <p class="eyebrow">MCM/ICM 2026</p>
+          <h1>证书发布监测</h1>
+        </div>
+        <button id="checkNow" class="primary-button" type="button" title="立即检查一次">
+          <span aria-hidden="true">↻</span>
+          立即检查
+        </button>
+      </section>
+
+      <section class="status-band" aria-live="polite">
+        <div>
+          <p class="label">当前状态</p>
+          <p id="stateText" class="state">读取中</p>
+        </div>
+        <div id="stateBadge" class="badge badge-idle">等待检查</div>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>检查信息</h2>
+          <dl>
+            <div>
+              <dt>上次检查</dt>
+              <dd id="lastCheckedAt">-</dd>
+            </div>
+            <div>
+              <dt>下次检查</dt>
+              <dd id="nextCheckAt">-</dd>
+            </div>
+            <div>
+              <dt>HTTP 状态</dt>
+              <dd id="httpStatus">-</dd>
+            </div>
+            <div>
+              <dt>内容类型</dt>
+              <dd id="contentType">-</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="panel">
+          <h2>证书与通知</h2>
+          <dl>
+            <div>
+              <dt>证书链接</dt>
+              <dd><a id="checkUrl" href="#" target="_blank" rel="noreferrer">-</a></dd>
+            </div>
+            <div>
+              <dt>下载文件</dt>
+              <dd id="downloadedPath">-</dd>
+            </div>
+            <div>
+              <dt>邮件通知</dt>
+              <dd id="notified">-</dd>
+            </div>
+          </dl>
+          <a id="downloadLink" class="secondary-button hidden" href="/certificate">下载证书</a>
+        </article>
+      </section>
+
+      <section id="errorPanel" class="error-panel hidden">
+        <h2>最近错误</h2>
+        <p id="errorText"></p>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

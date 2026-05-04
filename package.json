@@ -1,0 +1,16 @@
+{
+  "name": "mcm-certificate-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "check": "node src/check.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemailer": "^8.0.7"
+  }
+}
